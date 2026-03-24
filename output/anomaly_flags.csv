@@ -1,0 +1,4 @@
+dataset_name,column_name,anomaly_type,prev_value,curr_value,delta,threshold,severity,message
+orders_day_2,customer_id,NULL_SPIKE,0.0,27.5,27.5,20.0,MEDIUM,NULL spike in 'customer_id': 0.0% → 27.5% (+27.5%) in orders_day_2
+orders_day_2,order_amount,NULL_SPIKE,0.0,27.5,27.5,20.0,MEDIUM,NULL spike in 'order_amount': 0.0% → 27.5% (+27.5%) in orders_day_2
+orders_day_3,order_amount,DISTRIBUTION_DRIFT_MEAN,153.9093,322.4613,109.51,30.0,HIGH,Mean drift in 'order_amount': 153.9093 → 322.4613 (109.5% change) in orders_day_3

@@ -1,0 +1,4 @@
+dataset_name,column_name,issue_type,detail,severity
+orders_day_2,discount_code,NEW_COLUMN,Column 'discount_code' does not exist in baseline (orders_day_1),MEDIUM
+orders_day_2,region,MISSING_COLUMN,Column 'region' from baseline is missing in orders_day_2,HIGH
+orders_day_3,discount_code,NEW_COLUMN,Column 'discount_code' does not exist in baseline (orders_day_1),MEDIUM

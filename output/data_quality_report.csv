@@ -1,0 +1,17 @@
+dataset_name,dataset_date,column_name,row_count,column_count,null_count,null_percentage,unique_count,duplicate_count,duplicate_pct,dtype_raw,inferred_dtype,mean,median,std,min,max
+orders_day_1,Day 1,order_id,120,5,0,0.0,120,0,0.0,str,object,,,,,
+orders_day_1,Day 1,customer_id,120,5,0,0.0,120,0,0.0,str,object,,,,,
+orders_day_1,Day 1,order_amount,120,5,0,0.0,119,0,0.0,str,float64,146.833,147.07,37.0127,45.21,248.53
+orders_day_1,Day 1,order_date,120,5,0,0.0,31,0,0.0,str,object,,,,,
+orders_day_1,Day 1,region,120,5,0,0.0,5,0,0.0,str,object,,,,,
+orders_day_2,Day 2,order_id,120,5,0,0.0,120,0,0.0,str,object,,,,,
+orders_day_2,Day 2,customer_id,120,5,33,27.5,87,0,0.0,str,object,,,,,
+orders_day_2,Day 2,order_amount,120,5,33,27.5,83,0,0.0,str,float64,153.9093,157.425,40.7855,68.99,304.11
+orders_day_2,Day 2,order_date,120,5,0,0.0,29,0,0.0,str,object,,,,,
+orders_day_2,Day 2,discount_code,120,5,45,37.5,70,0,0.0,str,object,,,,,
+orders_day_3,Day 3,order_id,135,6,0,0.0,120,5,3.7,str,object,,,,,
+orders_day_3,Day 3,customer_id,135,6,6,4.44,115,5,3.7,str,object,,,,,
+orders_day_3,Day 3,order_amount,135,6,0,0.0,120,5,3.7,str,float64,322.4613,320.92,82.6147,50.0,511.97
+orders_day_3,Day 3,order_date,135,6,16,11.85,30,5,3.7,str,object,,,,,
+orders_day_3,Day 3,region,135,6,29,21.48,5,5,3.7,str,object,,,,,
+orders_day_3,Day 3,discount_code,135,6,76,56.3,58,5,3.7,str,object,,,,,

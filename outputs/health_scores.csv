@@ -1,0 +1,4 @@
+dataset_name,avg_null_pct,duplicate_pct,schema_penalties,anomaly_penalties,health_score,grade
+orders_day_1,0.0,0.0,0,0,100.0,A
+orders_day_2,18.5,0.0,15,8,49.2,D
+orders_day_3,15.68,3.7,5,8,56.1,D
