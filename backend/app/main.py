@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -7,11 +9,22 @@ from fastapi.responses import JSONResponse
 from app.api import routes_health, routes_reports, routes_runs, routes_validate
 from app.core.config import settings
 from app.core.logging_config import configure_logging, logger
-from app.db.database import init_db
 
 configure_logging()
 
-app = FastAPI(title=settings.APP_NAME, version="1.0.0")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    logger.info("%s started", settings.APP_NAME)
+    yield
+    logger.info("%s stopped", settings.APP_NAME)
+
+
+app = FastAPI(
+    title=settings.APP_NAME,
+    version="1.0.0",
+    lifespan=lifespan,
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -20,12 +33,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-@app.on_event("startup")
-def on_startup() -> None:
-    init_db()
-    logger.info("%s started", settings.APP_NAME)
 
 
 @app.exception_handler(Exception)
