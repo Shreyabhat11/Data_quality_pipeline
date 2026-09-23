@@ -206,6 +206,7 @@ class QualityResult:
     findings: list[Finding] = field(default_factory=list)
     health_score: float = 0.0
     grade: str = "A"
+    score_breakdown: dict[str, float] = field(default_factory=dict)
 
     @property
     def schema_findings(self) -> list[Finding]:
@@ -474,20 +475,45 @@ def compute_health_score(
     avg_null_pct: float,
     duplicate_pct: float,
     findings: list[Finding],
-) -> tuple[float, str]:
-    schema_penalty = sum(SCHEMA_WEIGHTS.get(f.severity, 0) for f in findings if f.kind == "schema")
-    anomaly_penalty = sum(ANOMALY_WEIGHTS.get(f.severity, 0) for f in findings if f.kind == "anomaly")
-    datatype_penalty = sum(DATATYPE_WEIGHTS.get(f.severity, 0) for f in findings if f.kind == "datatype")
+) -> tuple[float, str, dict[str, float]]:
+    null_penalty = round(avg_null_pct * 1.5, 1)
+    duplicate_penalty = round(duplicate_pct * 2, 1)
+
+    schema_penalty = float(
+        sum(
+            SCHEMA_WEIGHTS.get(f.severity, 0)
+            for f in findings
+            if f.kind == "schema"
+        )
+    )
+
+    anomaly_penalty = float(
+        sum(
+            ANOMALY_WEIGHTS.get(f.severity, 0)
+            for f in findings
+            if f.kind == "anomaly"
+        )
+    )
+
+    datatype_penalty = float(
+        sum(
+            DATATYPE_WEIGHTS.get(f.severity, 0)
+            for f in findings
+            if f.kind == "datatype"
+        )
+    )
 
     raw_score = (
         100
-        - (avg_null_pct * 1.5)
-        - (duplicate_pct * 2)
+        - null_penalty
+        - duplicate_penalty
         - schema_penalty
         - anomaly_penalty
         - datatype_penalty
     )
+
     final_score = max(0.0, round(raw_score, 1))
+
     if final_score >= 90:
         grade = "A"
     elif final_score >= 75:
@@ -498,7 +524,24 @@ def compute_health_score(
         grade = "D"
     else:
         grade = "F"
-    return final_score, grade
+
+    breakdown = {
+        "null_penalty": null_penalty,
+        "duplicate_penalty": duplicate_penalty,
+        "schema_penalty": schema_penalty,
+        "anomaly_penalty": anomaly_penalty,
+        "datatype_penalty": datatype_penalty,
+        "total_penalty": round(
+            null_penalty
+            + duplicate_penalty
+            + schema_penalty
+            + anomaly_penalty
+            + datatype_penalty,
+            1,
+        ),
+    }
+
+    return final_score, grade, breakdown
 
 
 # ─────────────────────────────────────────────────────────────
@@ -529,7 +572,7 @@ def analyze(
         )
 
     avg_null = float(np.mean([m.null_percentage for m in current_metrics])) if current_metrics else 0.0
-    score, grade = compute_health_score(avg_null, dup_pct, findings)
+    score, grade, score_breakdown = compute_health_score(avg_null, dup_pct, findings)
 
     return QualityResult(
         dataset_name=dataset_name,
@@ -543,4 +586,5 @@ def analyze(
         findings=findings,
         health_score=score,
         grade=grade,
+        score_breakdown=score_breakdown,
     )

@@ -48,6 +48,7 @@ def run_validation(
         duplicate_percentage=result.duplicate_percentage,
         health_score=result.health_score,
         grade=result.grade,
+        score_breakdown_json=json.dumps(result.score_breakdown),
         issue_count=len(result.schema_findings),
         anomaly_count=len(result.anomaly_findings),
         schema_issue_count=len(result.schema_findings),
@@ -111,6 +112,7 @@ def run_to_validate_response(run: Run) -> dict:
         "column_count": run.column_count,
         "health_score": run.health_score,
         "grade": run.grade,
+        "score_breakdown": json.loads(run.score_breakdown_json),
         "issue_count": run.issue_count,
         "anomaly_count": run.anomaly_count,
         "schema_issue_count": run.schema_issue_count,
@@ -133,6 +135,7 @@ def run_to_summary(run: Run) -> dict:
         "grade": run.grade,
         "issue_count": run.issue_count,
         "anomaly_count": run.anomaly_count,
+        "datatype_issue_count": run.datatype_issue_count,
         "status": run.status,
     }
 

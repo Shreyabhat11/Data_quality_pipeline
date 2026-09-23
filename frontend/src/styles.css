@@ -64,3 +64,36 @@ table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }
 .row-actions { display: flex; gap: 6px; }
 .row-actions button { padding: 4px 8px; font-size: 12px; }
+
+.score-breakdown {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  max-width: 360px;
+}
+
+.score-breakdown h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.breakdown-row span:last-child {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.breakdown-total {
+  margin-top: 0.4rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid #e5e7eb;
+  font-weight: 700;
+}

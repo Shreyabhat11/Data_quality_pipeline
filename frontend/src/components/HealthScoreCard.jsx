@@ -18,6 +18,41 @@ export default function HealthScoreCard({ result }) {
           <span>{result.anomaly_count} anomalies</span>
           <span>{result.datatype_issue_count} datatype issues</span>
         </div>
+        {result.score_breakdown && (
+          <div className="score-breakdown">
+            <h4>Score deductions</h4>
+
+            <div className="breakdown-row">
+              <span>Missing values</span>
+              <span>-{result.score_breakdown.null_penalty.toFixed(1)}</span>
+            </div>
+
+            <div className="breakdown-row">
+              <span>Duplicates</span>
+              <span>-{result.score_breakdown.duplicate_penalty.toFixed(1)}</span>
+            </div>
+
+            <div className="breakdown-row">
+              <span>Schema issues</span>
+              <span>-{result.score_breakdown.schema_penalty.toFixed(1)}</span>
+            </div>
+
+            <div className="breakdown-row">
+              <span>Datatype issues</span>
+              <span>-{result.score_breakdown.datatype_penalty.toFixed(1)}</span>
+            </div>
+
+            <div className="breakdown-row">
+              <span>Anomalies</span>
+              <span>-{result.score_breakdown.anomaly_penalty.toFixed(1)}</span>
+            </div>
+
+            <div className="breakdown-row breakdown-total">
+              <span>Total deduction</span>
+              <span>-{result.score_breakdown.total_penalty.toFixed(1)}</span>
+            </div>
+          </div>
+        )}
         {result.has_baseline ? (
           <p className="baseline-note">Compared against baseline: {result.baseline_name}</p>
         ) : (

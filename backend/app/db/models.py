@@ -53,6 +53,9 @@ class Run(Base):
     # JSON-encoded list of per-column metrics (see schemas.validation.ColumnMetricOut)
     column_metrics_json: Mapped[str] = mapped_column(Text, default="[]")
 
+    # JSON-encoded deterministic health-score penalty breakdown.
+    score_breakdown_json: Mapped[str] = mapped_column(Text, default="{}")
+
     findings: Mapped[list["FindingRecord"]] = relationship(
         back_populates="run", cascade="all, delete-orphan"
     )

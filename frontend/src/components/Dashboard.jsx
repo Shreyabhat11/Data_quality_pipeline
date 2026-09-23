@@ -1,7 +1,7 @@
 export default function Dashboard({ runs }) {
   const latest = runs[0];
   const totalRuns = runs.length;
-  const recentIssues = runs.slice(0, 5).reduce((sum, r) => sum + r.issue_count + r.anomaly_count, 0);
+  const recentFindings = runs.slice(0, 5).reduce((sum, r) => sum + r.issue_count + r.anomaly_count + (r.datatype_issue_count || 0), 0);
 
   return (
     <div className="dashboard-strip">
@@ -14,8 +14,8 @@ export default function Dashboard({ runs }) {
         <span className="mini-value">{totalRuns}</span>
       </div>
       <div className="card mini-stat">
-        <span className="mini-label">Issues in last 5 runs</span>
-        <span className="mini-value">{recentIssues}</span>
+        <span className="mini-label">Findings in last 5 runs</span>
+        <span className="mini-value">{recentFindings}</span>
       </div>
     </div>
   );

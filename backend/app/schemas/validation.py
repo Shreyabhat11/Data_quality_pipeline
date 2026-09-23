@@ -32,6 +32,13 @@ class FindingOut(BaseModel):
     curr_value: Optional[float] = None
     delta: Optional[float] = None
 
+class ScoreBreakdownOut(BaseModel):
+    null_penalty: float
+    duplicate_penalty: float
+    schema_penalty: float
+    anomaly_penalty: float
+    datatype_penalty: float
+    total_penalty: float
 
 class ValidateResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -52,7 +59,7 @@ class ValidateResponse(BaseModel):
     duplicate_percentage: float
     checks: list[ColumnMetricOut]
     issues: list[FindingOut]
-
+    score_breakdown: ScoreBreakdownOut
 
 class RunSummaryOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -64,6 +71,7 @@ class RunSummaryOut(BaseModel):
     grade: str
     issue_count: int
     anomaly_count: int
+    datatype_issue_count: int   
     status: str
 
 

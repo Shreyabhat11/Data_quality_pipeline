@@ -13,7 +13,7 @@ export default function RunHistory({ runs, onOpenRun, onDownloadReport }) {
                 <th>Date</th>
                 <th>Score</th>
                 <th>Grade</th>
-                <th>Issues</th>
+                <th>Findings</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -25,7 +25,7 @@ export default function RunHistory({ runs, onOpenRun, onDownloadReport }) {
                   <td>{new Date(r.created_at).toLocaleString()}</td>
                   <td>{r.health_score.toFixed(1)}</td>
                   <td>{r.grade}</td>
-                  <td>{r.issue_count + r.anomaly_count}</td>
+                  <td>{r.issue_count + r.anomaly_count + (r.datatype_issue_count || 0)}</td>
                   <td>{r.status}</td>
                   <td className="row-actions">
                     <button onClick={() => onOpenRun(r.run_id)}>View</button>
