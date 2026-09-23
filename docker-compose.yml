@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dqp_user
+      POSTGRES_PASSWORD: dqp_password
+      POSTGRES_DB: dqp
+    volumes:
+      - dqp_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dqp_user -d dqp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://dqp_user:dqp_password@postgres:5432/dqp
+      CORS_ORIGINS: http://localhost:5173,http://localhost:4173
+      MAX_UPLOAD_SIZE: "10485760"
+      REPORTS_DIR: /app/reports
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    volumes:
+      - dqp_reports:/app/reports
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE_URL: http://localhost:8000
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "4173:4173"
+
+volumes:
+  dqp_pg_data:
+  dqp_reports:
