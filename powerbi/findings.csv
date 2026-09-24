@@ -1,0 +1,55 @@
+finding_id,run_id,kind,issue_type,column_name,severity,message,prev_value,curr_value,delta
+79,82a5a089-b515-468d-9b8f-189021830229,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+55,9dfc4dff-50ba-413a-b76d-eb7549b48230,anomaly,NULL_SPIKE,customer_id,MEDIUM,NULL spike in 'customer_id': 0.0% -> 38.89% (+38.9 pp).,0.0,38.89,38.89
+56,d335e70f-b01e-448a-8f92-8f35fbbf95c5,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 3859.5567 (55.0% change).,2490.0366,3859.5567,55.0
+57,d335e70f-b01e-448a-8f92-8f35fbbf95c5,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 662.7355 (55.0% change).,427.5712,662.7355,55.0
+58,b8eba6bb-4f19-4871-9c91-6d79374de8d1,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 940.6568 (120.0% change).,427.5712,940.6568,120.0
+59,4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,datatype,DATATYPE_INCONSISTENCY,order_amount,MEDIUM,"Column 'order_amount' has mixed types: 88.9% of non-null values parse as numeric, the rest do not.",,,
+60,e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,schema,NEW_COLUMN,sales_channel,MEDIUM,Column 'sales_channel' is present in this dataset but not in the baseline.,,,
+61,e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+62,45da1891-ddbf-4adc-b993-b579caad866c,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 16.28%.,0.0,16.28,16.28
+63,3792cf5a-7697-476e-82bd-ace4d0239593,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+64,3792cf5a-7697-476e-82bd-ace4d0239593,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 44.44% (+44.4 pp).,0.0,44.44,44.44
+65,3792cf5a-7697-476e-82bd-ace4d0239593,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4233.062 (70.0% change).,2490.0366,4233.062,70.0
+66,3792cf5a-7697-476e-82bd-ace4d0239593,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 726.8708 (70.0% change).,427.5712,726.8708,70.0
+67,a5c078e0-18dd-4500-9c4c-36519f61701b,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+68,a5c078e0-18dd-4500-9c4c-36519f61701b,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 60.43% (+60.4 pp).,0.0,60.43,60.43
+69,a5c078e0-18dd-4500-9c4c-36519f61701b,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4940.2909 (98.4% change).,2490.0366,4940.2909,98.4
+70,a5c078e0-18dd-4500-9c4c-36519f61701b,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 853.4718 (99.6% change).,427.5712,853.4718,99.61
+71,a5c078e0-18dd-4500-9c4c-36519f61701b,anomaly,NULL_SPIKE,discount_code,MEDIUM,NULL spike in 'discount_code': 41.11% -> 80.43% (+39.3 pp).,41.11,80.43,39.32
+72,a5c078e0-18dd-4500-9c4c-36519f61701b,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 21.74%.,0.0,21.74,21.74
+73,895aaefd-a30f-44c2-a4ee-69403336ebac,anomaly,NULL_SPIKE,customer_id,MEDIUM,NULL spike in 'customer_id': 0.0% -> 38.89% (+38.9 pp).,0.0,38.89,38.89
+74,f15876e2-a18c-40f3-89f6-3f6052eb8bdc,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 3859.5567 (55.0% change).,2490.0366,3859.5567,55.0
+75,f15876e2-a18c-40f3-89f6-3f6052eb8bdc,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 662.7355 (55.0% change).,427.5712,662.7355,55.0
+76,51438c5a-1bc3-4173-b752-24d8ec26aaad,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 940.6568 (120.0% change).,427.5712,940.6568,120.0
+77,f12db942-0a53-4ea4-9e9e-cb451ef58a1e,datatype,DATATYPE_INCONSISTENCY,order_amount,MEDIUM,"Column 'order_amount' has mixed types: 88.9% of non-null values parse as numeric, the rest do not.",,,
+78,82a5a089-b515-468d-9b8f-189021830229,schema,NEW_COLUMN,sales_channel,MEDIUM,Column 'sales_channel' is present in this dataset but not in the baseline.,,,
+80,a435147f-13cf-4ab7-b61a-112a08f87dda,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 16.28%.,0.0,16.28,16.28
+81,a48ee0b1-dc2c-452e-b115-2a5fff8283d3,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+82,a48ee0b1-dc2c-452e-b115-2a5fff8283d3,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 44.44% (+44.4 pp).,0.0,44.44,44.44
+83,a48ee0b1-dc2c-452e-b115-2a5fff8283d3,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4233.062 (70.0% change).,2490.0366,4233.062,70.0
+84,a48ee0b1-dc2c-452e-b115-2a5fff8283d3,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 726.8708 (70.0% change).,427.5712,726.8708,70.0
+85,99e2284b-db56-4e72-9020-6cfd46485ee5,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+86,99e2284b-db56-4e72-9020-6cfd46485ee5,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 61.3% (+61.3 pp).,0.0,61.3,61.3
+87,99e2284b-db56-4e72-9020-6cfd46485ee5,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4940.2909 (98.4% change).,2490.0366,4940.2909,98.4
+88,99e2284b-db56-4e72-9020-6cfd46485ee5,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 853.4718 (99.6% change).,427.5712,853.4718,99.61
+89,99e2284b-db56-4e72-9020-6cfd46485ee5,anomaly,NULL_SPIKE,discount_code,HIGH,NULL spike in 'discount_code': 41.11% -> 81.3% (+40.2 pp).,41.11,81.3,40.19
+90,99e2284b-db56-4e72-9020-6cfd46485ee5,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 21.74%.,0.0,21.74,21.74
+91,7051145c-30c2-4200-ade2-be8314d6ce68,anomaly,NULL_SPIKE,customer_id,MEDIUM,NULL spike in 'customer_id': 0.0% -> 38.89% (+38.9 pp).,0.0,38.89,38.89
+92,72b6472d-3104-40cc-93a2-e93758a38e84,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 3859.5567 (55.0% change).,2490.0366,3859.5567,55.0
+93,72b6472d-3104-40cc-93a2-e93758a38e84,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 662.7355 (55.0% change).,427.5712,662.7355,55.0
+94,21b4368b-81c3-4f26-8862-35eb5e3efe32,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 940.6568 (120.0% change).,427.5712,940.6568,120.0
+95,5e5b3c6a-11d8-472d-93c1-5686e1400ea4,datatype,DATATYPE_INCONSISTENCY,order_amount,MEDIUM,"Column 'order_amount' has mixed types: 88.9% of non-null values parse as numeric, the rest do not.",,,
+96,ab2be80a-53d5-4612-92f1-5bb8918e003c,schema,NEW_COLUMN,sales_channel,MEDIUM,Column 'sales_channel' is present in this dataset but not in the baseline.,,,
+97,ab2be80a-53d5-4612-92f1-5bb8918e003c,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+98,6f82acd2-328a-4ada-91d7-81bdb9cae672,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 16.28%.,0.0,16.28,16.28
+99,9f0f3500-9c72-43fd-a673-77db28a42f8a,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+100,9f0f3500-9c72-43fd-a673-77db28a42f8a,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 44.44% (+44.4 pp).,0.0,44.44,44.44
+101,9f0f3500-9c72-43fd-a673-77db28a42f8a,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4233.062 (70.0% change).,2490.0366,4233.062,70.0
+102,9f0f3500-9c72-43fd-a673-77db28a42f8a,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,MEDIUM,Spread (std dev) drift in 'order_amount': 427.5712 -> 726.8708 (70.0% change).,427.5712,726.8708,70.0
+103,605c6cea-a4cf-459b-84c3-d2696cc71e4a,schema,MISSING_COLUMN,quantity,HIGH,Column 'quantity' is present in the baseline but missing from this dataset.,,,
+104,605c6cea-a4cf-459b-84c3-d2696cc71e4a,anomaly,NULL_SPIKE,customer_id,HIGH,NULL spike in 'customer_id': 0.0% -> 60.87% (+60.9 pp).,0.0,60.87,60.87
+105,605c6cea-a4cf-459b-84c3-d2696cc71e4a,anomaly,DISTRIBUTION_DRIFT_MEAN,order_amount,HIGH,Mean drift in 'order_amount': 2490.0366 -> 4940.2909 (98.4% change).,2490.0366,4940.2909,98.4
+106,605c6cea-a4cf-459b-84c3-d2696cc71e4a,anomaly,DISTRIBUTION_DRIFT_STD,order_amount,HIGH,Spread (std dev) drift in 'order_amount': 427.5712 -> 853.4718 (99.6% change).,427.5712,853.4718,99.61
+107,605c6cea-a4cf-459b-84c3-d2696cc71e4a,anomaly,NULL_SPIKE,discount_code,MEDIUM,NULL spike in 'discount_code': 41.11% -> 80.0% (+38.9 pp).,41.11,80.0,38.89
+108,605c6cea-a4cf-459b-84c3-d2696cc71e4a,anomaly,DUPLICATE_SPIKE,ALL,HIGH,Duplicate rate rose from 0.0% to 21.74%.,0.0,21.74,21.74

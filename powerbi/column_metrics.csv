@@ -1,0 +1,175 @@
+run_id,created_at,dataset_name,column_name,null_count,null_percentage,unique_count,dtype_raw,inferred_dtype,numeric_ratio,mean,median,std,min,max
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,order_id,0,0.0,180,object,object,0.0,,,,,
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,customer_id,0,0.0,57,object,object,0.0,,,,,
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,region,0,0.0,4,object,object,0.0,,,,,
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,discount_code,74,41.11,3,object,object,0.0,,,,,
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,order_id,0,0.0,180,object,object,0.0,,,,,
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,customer_id,18,10.0,55,object,object,0.0,,,,,
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,region,0,0.0,4,object,object,0.0,,,,,
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,discount_code,74,41.11,3,object,object,0.0,,,,,
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,customer_id,70,38.89,51,object,object,0.0,,,,,
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,region,0,0.0,4,object,object,0.0,,,,,
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,discount_code,74,41.11,3,object,object,0.0,,,,,
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,order_amount,0,0.0,180,float64,float64,1.0,3859.5567,3872.08,662.7355,2047.72,5772.32
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,region,0,0.0,4,object,object,0.0,,,,,
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,order_amount,0,0.0,180,float64,float64,1.0,2490.0367,2507.81,940.6568,-81.6,5204.93
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,region,0,0.0,4,object,object,0.0,,,,,
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,order_id,0,0.0,180,object,object,0.0,,,,,
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,customer_id,0,0.0,57,object,object,0.0,,,,,
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,order_amount,0,0.0,161,object,float64,0.8889,2492.968,2504.075,422.551,1321.11,3724.08
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,region,0,0.0,4,object,object,0.0,,,,,
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,discount_code,74,41.11,3,object,object,0.0,,,,,
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,region,0,0.0,4,object,object,0.0,,,,,
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,sales_channel,0,0.0,3,str,object,0.0,,,,,
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,customer_id,0,0.0,57,object,object,0.0,,,,,
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,order_amount,0,0.0,180,object,float64,1.0,2481.9417,2484.38,425.6691,1321.11,3724.08
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,quantity,0,0.0,7,object,float64,1.0,4.1302,4.0,1.9887,1.0,7.0
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,region,0,0.0,4,object,object,0.0,,,,,
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,discount_code,88,40.93,3,object,object,0.0,,,,,
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,order_id,0,0.0,180,object,object,0.0,,,,,
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,customer_id,80,44.44,54,object,object,0.0,,,,,
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,order_amount,0,0.0,180,float64,float64,1.0,4233.062,4246.795,726.8708,2245.89,6330.94
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,region,0,0.0,4,object,object,0.0,,,,,
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,discount_code,74,41.11,3,object,object,0.0,,,,,
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,order_id,0,0.0,180,object,object,0.0,,,,,
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,customer_id,139,60.43,40,object,object,0.0,,,,,
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,order_amount,0,0.0,180,float64,float64,1.0,4940.2909,4951.48,853.4718,2642.22,7448.16
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,region,0,0.0,4,object,object,0.0,,,,,
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,discount_code,185,80.43,3,object,object,0.0,,,,,
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,order_id,0,0.0,180,object,object,0.0,,,,,
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,customer_id,0,0.0,57,object,object,0.0,,,,,
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,region,0,0.0,4,object,object,0.0,,,,,
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,discount_code,74,41.11,3,object,object,0.0,,,,,
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,order_id,0,0.0,180,object,object,0.0,,,,,
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,customer_id,18,10.0,57,object,object,0.0,,,,,
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,region,0,0.0,4,object,object,0.0,,,,,
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,discount_code,74,41.11,3,object,object,0.0,,,,,
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,customer_id,70,38.89,51,object,object,0.0,,,,,
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,region,0,0.0,4,object,object,0.0,,,,,
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,discount_code,74,41.11,3,object,object,0.0,,,,,
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,order_amount,0,0.0,180,float64,float64,1.0,3859.5567,3872.08,662.7355,2047.72,5772.32
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,region,0,0.0,4,object,object,0.0,,,,,
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,order_amount,0,0.0,180,float64,float64,1.0,2490.0367,2507.81,940.6568,-81.6,5204.93
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,region,0,0.0,4,object,object,0.0,,,,,
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,order_id,0,0.0,180,object,object,0.0,,,,,
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,customer_id,0,0.0,57,object,object,0.0,,,,,
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,order_amount,0,0.0,161,object,float64,0.8889,2485.3884,2504.075,423.7633,1321.11,3724.08
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,region,0,0.0,4,object,object,0.0,,,,,
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,discount_code,74,41.11,3,object,object,0.0,,,,,
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,region,0,0.0,4,object,object,0.0,,,,,
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,sales_channel,0,0.0,3,str,object,0.0,,,,,
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,customer_id,0,0.0,57,object,object,0.0,,,,,
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,order_amount,0,0.0,180,object,float64,1.0,2481.9417,2484.38,425.6691,1321.11,3724.08
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,quantity,0,0.0,7,object,float64,1.0,4.1302,4.0,1.9887,1.0,7.0
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,region,0,0.0,4,object,object,0.0,,,,,
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,discount_code,88,40.93,3,object,object,0.0,,,,,
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,order_id,0,0.0,180,object,object,0.0,,,,,
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,customer_id,80,44.44,51,object,object,0.0,,,,,
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,order_amount,0,0.0,180,float64,float64,1.0,4233.062,4246.795,726.8708,2245.89,6330.94
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,region,0,0.0,4,object,object,0.0,,,,,
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,discount_code,74,41.11,3,object,object,0.0,,,,,
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,order_id,0,0.0,180,object,object,0.0,,,,,
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,customer_id,141,61.3,43,object,object,0.0,,,,,
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,order_amount,0,0.0,180,float64,float64,1.0,4940.2909,4951.48,853.4718,2642.22,7448.16
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,region,0,0.0,4,object,object,0.0,,,,,
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,discount_code,187,81.3,3,object,object,0.0,,,,,
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,order_id,0,0.0,180,object,object,0.0,,,,,
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,customer_id,0,0.0,57,object,object,0.0,,,,,
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,region,0,0.0,4,object,object,0.0,,,,,
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,discount_code,74,41.11,3,object,object,0.0,,,,,
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,order_id,0,0.0,180,object,object,0.0,,,,,
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,customer_id,18,10.0,56,object,object,0.0,,,,,
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,region,0,0.0,4,object,object,0.0,,,,,
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,discount_code,74,41.11,3,object,object,0.0,,,,,
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,customer_id,70,38.89,51,object,object,0.0,,,,,
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,region,0,0.0,4,object,object,0.0,,,,,
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,discount_code,74,41.11,3,object,object,0.0,,,,,
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,order_amount,0,0.0,180,float64,float64,1.0,3859.5567,3872.08,662.7355,2047.72,5772.32
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,region,0,0.0,4,object,object,0.0,,,,,
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,order_amount,0,0.0,180,float64,float64,1.0,2490.0367,2507.81,940.6568,-81.6,5204.93
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,region,0,0.0,4,object,object,0.0,,,,,
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,order_id,0,0.0,180,object,object,0.0,,,,,
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,customer_id,0,0.0,57,object,object,0.0,,,,,
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,order_amount,0,0.0,161,object,float64,0.8889,2485.0604,2491.0,433.5108,1321.11,3724.08
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,quantity,0,0.0,7,object,float64,1.0,4.15,4.0,2.0208,1.0,7.0
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,region,0,0.0,4,object,object,0.0,,,,,
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,discount_code,74,41.11,3,object,object,0.0,,,,,
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,order_id,0,0.0,180,object,object,0.0,,,,,
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,customer_id,0,0.0,57,object,object,0.0,,,,,
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,order_amount,0,0.0,180,object,float64,1.0,2490.0366,2498.115,427.5712,1321.11,3724.08
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,region,0,0.0,4,object,object,0.0,,,,,
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,discount_code,74,41.11,3,object,object,0.0,,,,,
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,sales_channel,0,0.0,3,str,object,0.0,,,,,
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,order_id,0,0.0,180,object,object,0.0,,,,,
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,customer_id,0,0.0,57,object,object,0.0,,,,,
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,order_amount,0,0.0,180,object,float64,1.0,2481.9417,2484.38,425.6691,1321.11,3724.08
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,quantity,0,0.0,7,object,float64,1.0,4.1302,4.0,1.9887,1.0,7.0
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,region,0,0.0,4,object,object,0.0,,,,,
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,discount_code,88,40.93,3,object,object,0.0,,,,,
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,order_id,0,0.0,180,object,object,0.0,,,,,
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,customer_id,80,44.44,52,object,object,0.0,,,,,
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,order_amount,0,0.0,180,float64,float64,1.0,4233.062,4246.795,726.8708,2245.89,6330.94
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,region,0,0.0,4,object,object,0.0,,,,,
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,discount_code,74,41.11,3,object,object,0.0,,,,,
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,order_id,0,0.0,180,object,object,0.0,,,,,
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,customer_id,140,60.87,43,object,object,0.0,,,,,
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,order_amount,0,0.0,180,float64,float64,1.0,4940.2909,4951.48,853.4718,2642.22,7448.16
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,region,0,0.0,4,object,object,0.0,,,,,
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,discount_code,184,80.0,3,object,object,0.0,,,,,

@@ -1,231 +1,229 @@
-# 📊 Data Quality & Pipeline Monitoring Dashboard
+# Data Quality Monitoring Platform
 
-> **Portfolio Project** · Data Engineering + Data Analysis · End-to-End
+A deployable, full-stack evolution of the original
+[`Data_quality_pipeline`](https://github.com/Shreyabhat11/Data_quality_pipeline)
+script. The same detection logic (null spikes, schema drift, duplicate
+detection, distribution drift, health scoring) now runs behind a REST API
+with persistent history, served to a React dashboard, instead of a CLI
+script that writes CSVs to a local `outputs/` folder.
 
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?logo=pandas)](https://pandas.pydata.org/)
-[![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791?logo=postgresql)](https://www.postgresql.org/)
-[![Power BI](https://img.shields.io/badge/Dashboard-Power%20BI-F2C811?logo=powerbi)](https://powerbi.microsoft.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+## 1. What this project does
 
----
+Upload a CSV. The platform runs a suite of data-quality checks against it
+(optionally comparing it to a baseline/reference dataset), computes a
+0–100 health score with a letter grade, stores the result, and shows you:
 
-## 📌 Problem Statement
+- the health score and grade
+- every detected issue (schema drift, null spikes, distribution drift,
+  duplicate spikes, datatype inconsistencies), with severity
+- per-column metrics (null %, unique count, mean/median/std, inferred type)
+- the full history of past validation runs
+- downloadable CSV reports per run
 
-Modern data pipelines ingest data from multiple sources daily. Without automated monitoring, data quality issues silently corrupt downstream reports, dashboards, and ML models. This project builds a complete, production-inspired system that:
-
-- Detects **null value spikes** before they reach analysts
-- Catches **schema drift** (added/removed/changed columns) between runs
-- Flags **statistical distribution shifts** in numeric fields
-- Identifies **duplicate record spikes** during ingestion
-- Computes a **health score** per dataset for at-a-glance monitoring
-
----
-
-## 🎯 Solution Approach
+## 2. Architecture
 
 ```
-Raw CSV Files (3 days)
-        │
-        ▼
- generate_datasets.py        ← Simulates real-world pipeline issues
-        │
-        ▼
-data_quality_checker.py      ← Computes metrics, detects anomalies
-        │
-        ├── data_quality_report.csv
-        ├── schema_issues.csv
-        ├── anomaly_flags.csv
-        └── health_scores.csv
-                │
-                ▼
-         SQL Tables (PostgreSQL)
-                │
-                ▼
-         Power BI Dashboard (5 pages)
+                    ┌──────────────────────┐
+                    │      Web Browser      │
+                    └──────────┬────────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │  React / Vite Frontend│
+                    │  Upload · Score ·     │
+                    │  Issues · History     │
+                    └──────────┬────────────┘
+                               │ REST (JSON)
+                               ▼
+                    ┌──────────────────────┐
+                    │       FastAPI         │
+                    │ /health   /validate   │
+                    │ /runs     /reports    │
+                    └──────────┬────────────┘
+                               │
+                    ┌──────────┴────────────┐
+                    ▼                       ▼
+          ┌──────────────────┐    ┌──────────────────┐
+          │  Quality Engine   │    │    PostgreSQL     │
+          │  (app/quality)    │    │  runs, findings   │
+          │  null / schema /  │    │  (metadata only — │
+          │  dtype / dup /    │    │  no raw CSVs)     │
+          │  drift / scoring  │    └──────────────────┘
+          └──────────────────┘
 ```
 
----
+`backend/app/quality/engine.py` is a direct refactor of the original
+`data_quality_checker.py` — the thresholds and scoring formula are
+unchanged, just turned into pure functions that take DataFrames instead of
+scanning a folder. See **Design decisions** below for what changed and why.
 
-## 🛠️ Tech Stack
+## 3. Features
 
-| Layer | Tool | Purpose |
-|-------|------|---------|
-| Data Generation | Python (Pandas, NumPy) | Simulate pipeline datasets with issues |
-| Data Quality Engine | Python (Pandas) | Compute metrics, detect anomalies |
-| Storage | CSV → PostgreSQL | Persist quality reports |
-| SQL Analysis | PostgreSQL | Trend queries, issue ranking, KPIs |
-| Visualization | Power BI Desktop | Interactive 5-page dashboard |
-| Logging | Python `logging` | Audit trail of all pipeline runs |
+- **Missing-value detection** — null % per column, and (with a baseline)
+  a null-rate *spike* alert when it jumps more than 20 percentage points.
+- **Schema drift** — new columns, removed columns, and inferred-dtype
+  changes vs. a baseline dataset.
+- **Datatype validation** — flags a column that's neither cleanly numeric
+  nor cleanly text (a mix of parseable and non-parseable values), even
+  with no baseline supplied.
+- **Duplicate detection** — duplicate row count/percentage, and a spike
+  alert when the rate rises above 5% *and* above the baseline's rate.
+- **Distribution drift** — mean-shift and standard-deviation-shift alerts
+  on numeric columns vs. a baseline (>30% and >40% relative change).
+- **Health scoring** — a deterministic, documented weighted-penalty
+  formula (not a black-box ML score) — see below.
+- **Validation history** — every run is persisted with its full result.
+- **Report generation** — four CSV reports per run (quality/schema/anomaly/health),
+  regenerated on demand from stored data, never from cached raw uploads.
 
----
-
-## 📁 Project Structure
-
-```
-data_quality_project/
-│
-├── data/                          ← Raw pipeline datasets
-│   ├── orders_day_1.csv           ← Clean baseline (120 rows)
-│   ├── orders_day_2.csv           ← Null spikes + schema drift (120 rows)
-│   └── orders_day_3.csv           ← Distribution shift + duplicates (135 rows)
-│
-├── outputs/                       ← Generated quality reports
-│   ├── data_quality_report.csv    ← Column-level metrics per dataset
-│   ├── schema_issues.csv          ← Schema drift log
-│   ├── anomaly_flags.csv          ← Detected anomalies
-│   ├── health_scores.csv          ← Dataset health scores + grades
-│   └── pipeline.log               ← Run audit log
-│
-├── sql/
-│   └── data_quality_sql.sql       ← CREATE TABLE + LOAD + 10 queries
-│
-├── generate_datasets.py           ← Dataset generator
-├── data_quality_checker.py        ← Main pipeline script
-└── README.md
-```
-
----
-
-## 🔍 Issues Introduced Per Dataset
-
-| Issue | Day 1 | Day 2 | Day 3 |
-|-------|:-----:|:-----:|:-----:|
-| Missing values | ❌ | ✅ ~28% in customer_id, order_amount | ✅ ~22% in region |
-| Schema drift (new column) | ❌ | ✅ `discount_code` added | ✅ `discount_code` |
-| Schema drift (missing column) | ❌ | ✅ `region` removed | ❌ |
-| Datatype inconsistency | ❌ | ✅ Mixed strings in order_amount | ❌ |
-| Duplicate records | ❌ | ❌ | ✅ ~15 duplicate rows |
-| Distribution shift | ❌ | ❌ | ✅ mean: 154 → 322 (+109%) |
-
----
-
-## 🚨 Key Detections (Sample Output)
-
-```
-═══════════════════════════════════════════════════════════════════
-  🚨  DATA QUALITY PIPELINE — ALERT SUMMARY
-═══════════════════════════════════════════════════════════════════
-
-📋 DATASET HEALTH SCORES:
-  Dataset                 Score  Grade  Avg Null%    Dup%
-  ────────────────────── ──────  ─────  ─────────  ──────
-  ✅ orders_day_1          100.0      A       0.0%    0.0%
-  ❌ orders_day_2           49.2      D      18.5%    0.0%
-  ❌ orders_day_3           56.1      D      15.7%    3.7%
-
-🔀 SCHEMA DRIFT ISSUES (3 total):
-  ⚠️  [orders_day_2] NEW_COLUMN: 'discount_code' added
-  🚨 [orders_day_2] MISSING_COLUMN: 'region' dropped
-  ⚠️  [orders_day_3] NEW_COLUMN: 'discount_code' still present
-
-📣 ANOMALY FLAGS (3 total):
-  ⚠️  NULL spike in 'customer_id': 0.0% → 27.5% (+27.5%)
-  ⚠️  NULL spike in 'order_amount': 0.0% → 27.5% (+27.5%)
-  🚨 Mean drift in 'order_amount': 153.9 → 322.5 (+109.5%)
-```
-
----
-
-## 💯 Health Score Formula
+### Health score formula
 
 ```
 Health Score = 100
-    - (avg_null_pct × 1.5)
-    - (duplicate_pct × 2)
-    - (HIGH schema issues × 10)
-    - (MEDIUM schema issues × 5)
-    - (HIGH anomaly flags × 8)
-    - (MEDIUM anomaly flags × 4)
+    − (avg_null_pct × 1.5)
+    − (duplicate_pct × 2)
+    − schema penalty:   10 × HIGH findings + 5 × MEDIUM findings
+    − anomaly penalty:   8 × HIGH findings + 4 × MEDIUM findings
+    − datatype penalty:  6 × HIGH findings + 3 × MEDIUM findings
 
-Grade: A (≥90) | B (≥75) | C (≥60) | D (≥40) | F (<40)
+Grade:  A ≥ 90 · B ≥ 75 · C ≥ 60 · D ≥ 40 · F < 40
 ```
 
----
+## 4. Tech stack
 
-## ▶️ How to Run
+- **Backend:** Python, FastAPI, SQLAlchemy, Pandas, NumPy
+- **Database:** PostgreSQL (SQLite for local tests / zero-config dev)
+- **Frontend:** React, Vite
+- **Containerization:** Docker, Docker Compose
+- **CI:** GitHub Actions
+- **Deployment target:** Vercel (frontend) + Render (backend) + a managed
+  Postgres instance
 
-### Prerequisites
+## 5. Local setup
+
+### Option A — Docker Compose (recommended)
+
 ```bash
-pip install pandas numpy
+cp backend/.env.example backend/.env
+docker compose up --build
 ```
 
-### 1. Generate Datasets
+- Frontend: http://localhost:4173
+- Backend:  http://localhost:8000 (docs at `/docs`)
+- Postgres: localhost:5432
+
+### Option B — run backend and frontend directly
+
 ```bash
-python generate_datasets.py
-# → Creates data/orders_day_1.csv, orders_day_2.csv, orders_day_3.csv
+# Backend
+cd backend
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements-dev.txt
+cp .env.example .env   # defaults to a local SQLite file if you skip Postgres
+uvicorn app.main:app --reload
+
+# Frontend (separate terminal)
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
 ```
 
-### 2. Run Quality Pipeline
+## 6. API documentation
+
+Interactive docs are auto-generated by FastAPI at `/docs` once the backend
+is running. Summary:
+
+| Method | Path | Description |
+|---|---|---|
+| `GET`  | `/health` | Liveness check. Does not touch the database. |
+| `POST` | `/validate` | Multipart upload: `file` (required CSV), `baseline` (optional CSV). Runs the quality engine and returns the full result. |
+| `GET`  | `/runs` | Paginated list of past validation runs (`?limit=&offset=`). |
+| `GET`  | `/runs/{run_id}` | Full stored result for one run. |
+| `GET`  | `/reports/{run_id}` | Download a regenerated CSV report. `?type=quality\|schema\|anomaly\|health`. |
+
+## 7. Testing
+
 ```bash
-python data_quality_checker.py
-# → Creates outputs/data_quality_report.csv
-# → Creates outputs/schema_issues.csv
-# → Creates outputs/anomaly_flags.csv
-# → Creates outputs/health_scores.csv
-# → Creates outputs/pipeline.log
+cd backend
+pytest --cov=app --cov-report=term-missing
 ```
 
-### 3. Load into SQL (optional)
-```bash
-# Open PostgreSQL and run:
-psql -U your_user -d your_db -f sql/data_quality_sql.sql
-# Then load CSVs using \COPY commands in the SQL file
-```
+The suite covers: the health endpoint, null-spike detection, schema-drift
+detection, duplicate detection, distribution-drift detection (mean and
+std), datatype-inconsistency detection, the health-score formula and its
+grade boundaries, the `/validate` API (clean dataset, baseline-drift
+dataset, malformed/empty/oversized/non-CSV rejections), run history and
+run-detail retrieval, and database persistence/cascade-delete behavior.
+Tests use an isolated SQLite database and never touch a production
+service.
 
-### 4. Build Power BI Dashboard
-```
-Follow: POWERBI_GUIDE.md
-Load 4 CSVs from outputs/ into Power BI Desktop
-Build 5 pages following the layout guide
-```
+## 8. Deployment
 
----
+### Backend → Render
 
-## 📊 Sample Outputs
+1. Create a new **Web Service**, pointing at `backend/` with `Dockerfile` build.
+2. Set environment variables: `DATABASE_URL` (from your managed Postgres),
+   `CORS_ORIGINS` (your deployed frontend URL), `MAX_UPLOAD_SIZE`,
+   `REPORTS_DIR=/app/reports`.
+3. Render will build and expose the service on a public HTTPS URL.
 
-**data_quality_report.csv** (sample rows):
-```
-dataset_name,   column_name,  null_percentage, mean,     std,   inferred_dtype
-orders_day_1,   order_amount, 0.0,             153.91,   39.88, float64
-orders_day_2,   order_amount, 27.5,            NULL,     NULL,  object
-orders_day_3,   order_amount, 0.0,             322.46,   89.55, float64
-```
+### Database → Managed PostgreSQL
 
-**anomaly_flags.csv** (sample rows):
-```
-dataset_name,  column_name,  anomaly_type,           delta, severity, message
-orders_day_2,  customer_id,  NULL_SPIKE,             27.5,  MEDIUM,   NULL spike: 0% → 27.5%
-orders_day_3,  order_amount, DISTRIBUTION_DRIFT_MEAN, 109.5, HIGH,   Mean drift: 153.91 → 322.46
-```
+Provision Postgres (Render's managed Postgres, Supabase, Neon, etc.) and
+put its connection string in the backend's `DATABASE_URL`. No manual
+schema setup is needed — `init_db()` creates tables on startup.
 
----
+### Frontend → Vercel
 
-## 🧠 Key Insights from the Data
+1. Import the repo, set the project root to `frontend/`.
+2. Set `VITE_API_BASE_URL` to the deployed Render backend URL.
+3. Deploy — Vercel builds with `npm run build` and serves `dist/`.
 
-1. **Day 2 had the worst schema stability** — a column was dropped (`region`) and one added (`discount_code`), combined with >27% nulls in critical fields
-2. **Day 3 showed a severe distribution shift** — order amounts nearly doubled in mean value (153 → 322), indicating either a data source change or pricing model shift
-3. **Duplicate records appeared on Day 3** — 15 duplicated rows (3.7% of dataset), suggesting an upstream deduplication step failed
-4. **`order_amount` is the highest-risk column** — it suffered null spikes, datatype corruption, and distribution drift across 2 of 3 days
+### CORS
 
----
+Set the backend's `CORS_ORIGINS` env var to a comma-separated list
+including the exact deployed frontend origin
+(e.g. `https://dqp-frontend.vercel.app`). Avoid `*` in production.
 
-## 🔮 Extension Ideas
+## 9. Screenshots
 
-- [ ] Add email/Slack alerting via `smtplib` or `requests` webhook
-- [ ] Schedule with Apache Airflow or cron
-- [ ] Add Great Expectations integration for richer validation
-- [ ] Connect to real S3 / BigQuery / Snowflake sources
-- [ ] Add row-count trend monitoring
-- [ ] Build a Streamlit web UI as an alternative to Power BI
+_Add screenshots here after deploying:_
 
----
+- `[ Dashboard screenshot placeholder ]`
+- `[ Validation results screenshot placeholder ]`
+- `[ Run history screenshot placeholder ]`
 
-## 📜 License
+## 10. Design decisions
 
-MIT License — free to use, modify, and share for portfolio or commercial purposes.
+- **Baseline is explicit per request, not folder position.** The original
+  script treated "the first CSV alphabetically in `data/`" as the
+  baseline and compared sequential files to each other. That doesn't map
+  onto a single-file upload flow, so the API takes an optional `baseline`
+  file per request instead, and the response clearly marks
+  `has_baseline` / `baseline_name`.
+- **No baseline ⇒ intrinsic checks only.** Null %, duplicate %, and a new
+  datatype-inconsistency check always run. Schema-drift and
+  distribution-drift checks are skipped (not faked) without a baseline.
+- **`STD_DRIFT_THRESHOLD` is now used.** The original script defined this
+  constant but never checked it — it's now a real standard-deviation
+  drift check, since the leftover constant looked like unfinished work
+  rather than an intentional no-op.
+- **Ragged CSVs are rejected, not silently reshaped.** By default, pandas
+  tolerates rows with the wrong number of fields (by inventing an index
+  column, or dropping data with a warning). The API validates row length
+  against the header explicitly and returns a 400 instead of quietly
+  parsing garbage.
+- **No raw CSVs are persisted.** Only run metadata, per-column metrics,
+  and findings are stored in Postgres; report CSVs are regenerated from
+  that stored data on request.
+- **Health score stays a documented formula, not a model.** Reproducible
+  and explainable by design, per the original project's intent.
 
----
+## Existing repository assets
 
-*Built as a portfolio project demonstrating end-to-end data quality engineering skills.*
-*Stack: Python · Pandas · PostgreSQL · Power BI*
+This project builds on top of the original repository rather than
+replacing it — `generate_datasets.py`, the sample datasets under `data/`,
+`sql/data_quality_sql.sql`, and `POWERBI_GUIDE.md` remain in place as the
+original standalone/CLI + Power BI path. This `backend/` + `frontend/` +
+`docker-compose.yml` addition is the deployable platform described above.

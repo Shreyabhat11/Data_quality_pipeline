@@ -1,0 +1,31 @@
+run_id,created_at,dataset_name,baseline_name,has_baseline,row_count,column_count,duplicate_count,duplicate_percentage,health_score,grade,schema_issue_count,datatype_issue_count,anomaly_count,null_penalty,duplicate_penalty,schema_penalty,datatype_penalty,anomaly_penalty,total_penalty,status
+d45db187-bb24-4d95-9e22-3e0bdc1dd6e3,2026-07-28T07:14:57.827432+00:00,orders_batch_01.csv | Healthy,orders_baseline.csv,True,180,6,0,0.0,89.7,B,0,0,0,10.3,0.0,0.0,0.0,0.0,10.3,COMPLETED
+85a9c7ec-46d0-4f8e-abca-31077347dc4e,2026-07-30T07:14:57.827432+00:00,orders_batch_02.csv | Minor Missingness,orders_baseline.csv,True,180,6,0,0.0,87.2,B,0,0,0,12.8,0.0,0.0,0.0,0.0,12.8,COMPLETED
+9dfc4dff-50ba-413a-b76d-eb7549b48230,2026-08-01T07:14:57.827432+00:00,orders_batch_03.csv | Null Spike,orders_baseline.csv,True,180,6,0,0.0,76.0,B,0,0,1,20.0,0.0,0.0,0.0,4.0,24.0,COMPLETED
+d335e70f-b01e-448a-8f92-8f35fbbf95c5,2026-08-03T07:14:57.827432+00:00,orders_batch_04.csv | Mean Drift,orders_baseline.csv,True,180,6,0,0.0,77.7,B,0,0,2,10.3,0.0,0.0,0.0,12.0,22.3,COMPLETED
+b8eba6bb-4f19-4871-9c91-6d79374de8d1,2026-08-05T07:14:57.827432+00:00,orders_batch_05.csv | Variance Drift,orders_baseline.csv,True,180,6,0,0.0,81.7,B,0,0,1,10.3,0.0,0.0,0.0,8.0,18.3,COMPLETED
+4b04ee64-5e85-44bd-8c07-5ee77bebe3f4,2026-08-07T07:14:57.827432+00:00,orders_batch_06.csv | Datatype Issue,orders_baseline.csv,True,180,6,0,0.0,86.7,B,0,1,0,10.3,0.0,0.0,3.0,0.0,13.3,COMPLETED
+e7f5e4ec-f176-43ea-8f4f-90e1c9d0ad59,2026-08-09T07:14:57.827432+00:00,orders_batch_07.csv | Schema Drift,orders_baseline.csv,True,180,6,0,0.0,74.7,C,2,0,0,10.3,0.0,15.0,0.0,0.0,25.3,COMPLETED
+45da1891-ddbf-4adc-b993-b579caad866c,2026-08-11T07:14:57.827432+00:00,orders_batch_08.csv | Duplicate Spike,orders_baseline.csv,True,215,6,35,16.28,49.2,D,0,0,1,10.2,32.6,0.0,0.0,8.0,50.8,COMPLETED
+3792cf5a-7697-476e-82bd-ace4d0239593,2026-08-13T07:14:57.827432+00:00,orders_batch_09.csv | Multiple Issues,orders_baseline.csv,True,180,5,0,0.0,44.3,D,1,0,3,25.7,0.0,10.0,0.0,20.0,55.7,COMPLETED
+a5c078e0-18dd-4500-9c4c-36519f61701b,2026-08-15T07:14:57.827432+00:00,orders_batch_10.csv | Severe Quality Drop,orders_baseline.csv,True,230,5,50,21.74,0.0,F,1,0,5,42.3,43.5,10.0,0.0,36.0,131.8,COMPLETED
+beeda866-646c-4139-bb54-2b48f787be6f,2026-08-17T07:14:57.827432+00:00,orders_batch_11.csv | Healthy,orders_baseline.csv,True,180,6,0,0.0,89.7,B,0,0,0,10.3,0.0,0.0,0.0,0.0,10.3,COMPLETED
+5c6f69ba-7f5a-4d20-aa9f-eaa335cfe171,2026-08-19T07:14:57.827432+00:00,orders_batch_12.csv | Minor Missingness,orders_baseline.csv,True,180,6,0,0.0,87.2,B,0,0,0,12.8,0.0,0.0,0.0,0.0,12.8,COMPLETED
+895aaefd-a30f-44c2-a4ee-69403336ebac,2026-08-21T07:14:57.827432+00:00,orders_batch_13.csv | Null Spike,orders_baseline.csv,True,180,6,0,0.0,76.0,B,0,0,1,20.0,0.0,0.0,0.0,4.0,24.0,COMPLETED
+f15876e2-a18c-40f3-89f6-3f6052eb8bdc,2026-08-23T07:14:57.827432+00:00,orders_batch_14.csv | Mean Drift,orders_baseline.csv,True,180,6,0,0.0,77.7,B,0,0,2,10.3,0.0,0.0,0.0,12.0,22.3,COMPLETED
+51438c5a-1bc3-4173-b752-24d8ec26aaad,2026-08-25T07:14:57.827432+00:00,orders_batch_15.csv | Variance Drift,orders_baseline.csv,True,180,6,0,0.0,81.7,B,0,0,1,10.3,0.0,0.0,0.0,8.0,18.3,COMPLETED
+f12db942-0a53-4ea4-9e9e-cb451ef58a1e,2026-08-27T07:14:57.827432+00:00,orders_batch_16.csv | Datatype Issue,orders_baseline.csv,True,180,6,0,0.0,86.7,B,0,1,0,10.3,0.0,0.0,3.0,0.0,13.3,COMPLETED
+82a5a089-b515-468d-9b8f-189021830229,2026-08-29T07:14:57.827432+00:00,orders_batch_17.csv | Schema Drift,orders_baseline.csv,True,180,6,0,0.0,74.7,C,2,0,0,10.3,0.0,15.0,0.0,0.0,25.3,COMPLETED
+a435147f-13cf-4ab7-b61a-112a08f87dda,2026-08-31T07:14:57.827432+00:00,orders_batch_18.csv | Duplicate Spike,orders_baseline.csv,True,215,6,35,16.28,49.2,D,0,0,1,10.2,32.6,0.0,0.0,8.0,50.8,COMPLETED
+a48ee0b1-dc2c-452e-b115-2a5fff8283d3,2026-09-02T07:14:57.827432+00:00,orders_batch_19.csv | Multiple Issues,orders_baseline.csv,True,180,5,0,0.0,44.3,D,1,0,3,25.7,0.0,10.0,0.0,20.0,55.7,COMPLETED
+99e2284b-db56-4e72-9020-6cfd46485ee5,2026-09-04T07:14:57.827432+00:00,orders_batch_20.csv | Severe Quality Drop,orders_baseline.csv,True,230,5,50,21.74,0.0,F,1,0,5,42.8,43.5,10.0,0.0,40.0,136.3,COMPLETED
+383d2650-b6ee-4d1b-ac8b-71ebc31b4b45,2026-09-06T07:14:57.827432+00:00,orders_batch_21.csv | Healthy,orders_baseline.csv,True,180,6,0,0.0,89.7,B,0,0,0,10.3,0.0,0.0,0.0,0.0,10.3,COMPLETED
+1d672807-4262-40e5-95bf-810ef203da7b,2026-09-08T07:14:57.827432+00:00,orders_batch_22.csv | Minor Missingness,orders_baseline.csv,True,180,6,0,0.0,87.2,B,0,0,0,12.8,0.0,0.0,0.0,0.0,12.8,COMPLETED
+7051145c-30c2-4200-ade2-be8314d6ce68,2026-09-10T07:14:57.827432+00:00,orders_batch_23.csv | Null Spike,orders_baseline.csv,True,180,6,0,0.0,76.0,B,0,0,1,20.0,0.0,0.0,0.0,4.0,24.0,COMPLETED
+72b6472d-3104-40cc-93a2-e93758a38e84,2026-09-12T07:14:57.827432+00:00,orders_batch_24.csv | Mean Drift,orders_baseline.csv,True,180,6,0,0.0,77.7,B,0,0,2,10.3,0.0,0.0,0.0,12.0,22.3,COMPLETED
+21b4368b-81c3-4f26-8862-35eb5e3efe32,2026-09-14T07:14:57.827432+00:00,orders_batch_25.csv | Variance Drift,orders_baseline.csv,True,180,6,0,0.0,81.7,B,0,0,1,10.3,0.0,0.0,0.0,8.0,18.3,COMPLETED
+5e5b3c6a-11d8-472d-93c1-5686e1400ea4,2026-09-16T07:14:57.827432+00:00,orders_batch_26.csv | Datatype Issue,orders_baseline.csv,True,180,6,0,0.0,86.7,B,0,1,0,10.3,0.0,0.0,3.0,0.0,13.3,COMPLETED
+ab2be80a-53d5-4612-92f1-5bb8918e003c,2026-09-18T07:14:57.827432+00:00,orders_batch_27.csv | Schema Drift,orders_baseline.csv,True,180,6,0,0.0,74.7,C,2,0,0,10.3,0.0,15.0,0.0,0.0,25.3,COMPLETED
+6f82acd2-328a-4ada-91d7-81bdb9cae672,2026-09-20T07:14:57.827432+00:00,orders_batch_28.csv | Duplicate Spike,orders_baseline.csv,True,215,6,35,16.28,49.2,D,0,0,1,10.2,32.6,0.0,0.0,8.0,50.8,COMPLETED
+9f0f3500-9c72-43fd-a673-77db28a42f8a,2026-09-22T07:14:57.827432+00:00,orders_batch_29.csv | Multiple Issues,orders_baseline.csv,True,180,5,0,0.0,44.3,D,1,0,3,25.7,0.0,10.0,0.0,20.0,55.7,COMPLETED
+605c6cea-a4cf-459b-84c3-d2696cc71e4a,2026-09-24T07:14:57.827432+00:00,orders_batch_30.csv | Severe Quality Drop,orders_baseline.csv,True,230,5,50,21.74,0.0,F,1,0,5,42.3,43.5,10.0,0.0,36.0,131.8,COMPLETED
